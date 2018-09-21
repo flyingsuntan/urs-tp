@@ -7,15 +7,18 @@ class EmailController extends BaseController{
     public function add(){
         if(IS_POST){
             if(I('post.act')=='addemail'){
-                $friendname = I('post.friendname');
-                $model = D('User');
-                $res = $model->where('username',$friendname)->find();
-                $fid = $res['id'];
+                $model = D('Email');
+                //var_dump($_POST);die;
+                if($model->create()){
+                    $data = I('post.');
+                    $data['uid'] = $_SESSION['user_id'];
+                    if($model->addEmail($data)) {
+                        $this->success('发送成功', U('index/index'));
+                    }
+                }
+                $this->error($model->getError());
             }
         }
-
-
-
         //加载发送页面
         $this->display();
     }

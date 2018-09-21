@@ -51,4 +51,7 @@ class LoginController extends Controller {
         //载入注册页面
         $this->display();
     }
+
+
+
 }

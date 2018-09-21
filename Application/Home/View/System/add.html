@@ -1,0 +1,43 @@
+<layout name="layout" />
+<div class="main-div">
+    <form name="main_form" method="POST" action="__SELF__" enctype="multipart/form-data" >
+        <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
+        <table cellspacing="1" cellpadding="3" width="100%">
+            <tr>
+                <input type="hidden" name="id" value="{$data['id']}">
+                <td class="label" style="text-align: left">标题：</td>
+            </tr>
+            <tr>
+                <td align="left">
+                    <input  type="text" size="50" name="title" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td class="label">发送内容：</td>
+            </tr>
+            <tr>
+                <td>
+                    <textarea name="content" id="content"></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="99" align="center">
+                    <input type="hidden" name="act" value="add">
+                    <input type="submit" class="button" value=" 确定 " />
+                    <input type="reset" class="button" value=" 重置 " />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<!-- 加载编辑器的容器 -->
+
+<!-- 配置文件 -->
+<script type="text/javascript" src="__PUBLIC__/umeditor/ueditor.config.js"></script>
+<!-- 编辑器源码文件 -->
+<script type="text/javascript" src="__PUBLIC__/umeditor/ueditor.all.js"></script>
+<!-- 实例化编辑器 -->
+<script type="text/javascript">
+    var ue = UE.getEditor('content');
+</script>
