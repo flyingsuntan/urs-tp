@@ -1,0 +1,46 @@
+<layout name="layout" />
+<div class="main-div">
+    <form name="main_form" method="POST" action="__SELF__" enctype="multipart/form-data" >
+        <input type="hidden" name="id" value="<?php echo $data['id']; ?>" />
+        <table cellspacing="1" cellpadding="3" width="100%">
+            <tr>
+                <input type="hidden" name="id" value="{$data['id']}">
+                <td class="label">用户姓名：</td>
+                <td>
+                    <input  type="text" name="username" value="{$data['username']}" />
+                </td>
+            </tr>
+            <tr>
+                <td class="label">用户密码：</td>
+                <td>
+                    <input  type="password" name="password" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td class="label">确认密码：</td>
+                <td>
+                    <input  type="password" name="cpassword" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td class="label">用户头像：</td>
+                <td>
+                    <input  type="file" name="user_pic" value="" />
+                </td>
+            </tr>
+            <tr>
+                <td class="label"></td>
+                <td>
+                    <input type="text" value="{$data['user_pic']}" disabled="disabled" size="50">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="99" align="center">
+                    <input type="hidden" name="act" value="edit">
+                    <input type="submit" class="button" value=" 确定 " />
+                    <input type="reset" class="button" value=" 重置 " />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
